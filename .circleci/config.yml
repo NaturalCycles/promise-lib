@@ -64,6 +64,15 @@ jobs:
       # release
       - run: *release
 
+      - store_test_results:
+          path: report
+      - store_artifacts:
+          path: report
+          destination: report
+      - store_artifacts:
+          path: coverage/lcov-report
+          destination: coverage
+
 #
 # Workflows
 #

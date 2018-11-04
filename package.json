@@ -21,7 +21,10 @@
   "engines": {
     "node": ">=10.13"
   },
-  "description": "",
+  "description": "Useful promise functions",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/NaturalCycles/promise-lib"
