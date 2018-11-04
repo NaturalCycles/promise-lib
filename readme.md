@@ -2,11 +2,11 @@
 
 > Useful promise functions, inspired by [Bluebird](https://github.com/petkaantonov/bluebird), [p-map](https://github.com/sindresorhus/p-map), [p-props](https://github.com/sindresorhus/p-props)
 
+[![npm](https://img.shields.io/npm/v/@naturalcycles/promise-lib/latest.svg)](https://www.npmjs.com/package/@naturalcycles/promise-lib)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![](https://circleci.com/gh/NaturalCycles/promise-lib.svg?style=shield&circle-token=cbb20b471eb9c1d5ed975e28c2a79a45671d78ea)](https://circleci.com/gh/NaturalCycles/promise-lib)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2564d58cefeeb31ce6dc/maintainability)](https://codeclimate.com/github/NaturalCycles/promise-lib/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2564d58cefeeb31ce6dc/test_coverage)](https://codeclimate.com/github/NaturalCycles/promise-lib/test_coverage)
-[![npm](https://img.shields.io/npm/v/@naturalcycles/promise-lib/latest.svg)](https://www.npmjs.com/package/@naturalcycles/promise-lib)
 
 # Why
 
