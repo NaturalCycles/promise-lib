@@ -1,6 +1,6 @@
 {
   "name": "@naturalcycles/promise-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build-prod": "del ./dist && yarn build-prod-cjs && yarn build-prod-esm && yarn build-copy ../dist/cjs && yarn build-copy ../dist/esm",
     "build-copy": "cpy --parents --cwd src '**/*.ts' '!**/*.test.ts' '!test'",
