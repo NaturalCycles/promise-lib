@@ -29,7 +29,6 @@ git_msg: &git_msg echo 'export GIT_MSG=`git log -1 --pretty=%B`' >> $BASH_ENV
 test: &test
   name: Test
   command: |
-    yarn build
     cc-test-reporter before-build
     yarn test-ci
     cc-test-reporter after-build -t lcov ./coverage/lcov.info
