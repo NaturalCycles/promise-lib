@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/NaturalCycles/promise-lib/compare/v1.0.2...v1.0.3) (2018-11-09)
+
+
+### Bug Fixes
+
+* experimenting with exporting esm-only ([1865be6](https://github.com/NaturalCycles/promise-lib/commit/1865be6))
+
 ## [1.0.2](https://github.com/NaturalCycles/promise-lib/compare/v1.0.1...v1.0.2) (2018-11-09)
 
 
