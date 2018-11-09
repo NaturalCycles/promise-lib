@@ -1,6 +1,6 @@
 {
   "name": "@naturalcycles/promise-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build-prod": "del ./dist && tsc -p tsconfig.prod.json"
   },
