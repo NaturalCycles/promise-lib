@@ -2,10 +2,7 @@
   "name": "@naturalcycles/promise-lib",
   "version": "1.0.1",
   "scripts": {
-    "build-prod": "del ./dist && yarn build-prod-cjs && yarn build-prod-esm && yarn _build-copy ../dist/cjs && yarn _build-copy ../dist/esm",
-    "_build-copy": "cpy --parents --cwd src '**/*.ts' '!**/*.test.ts' '!test'",
-    "build-prod-cjs": "tsc -p tsconfig.prod.json",
-    "build-prod-esm": "yarn build-prod-cjs --outDir ./dist/esm --module es2015"
+    "build-prod": "del ./dist && tsc -p tsconfig.prod.json"
   },
   "devDependencies": {
     "@naturalcycles/common-dev-deps": "^0.0.2",
@@ -13,11 +10,16 @@
     "jest": "^23.6.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "!src/scripts",
+    "!src/test",
+    "!src/**/*.test.*",
+    "!src/**/__snapshots__"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/cjs/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10.13"
   },

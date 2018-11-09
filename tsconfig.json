@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "commonjs",
+    "module": "es2015",
     "lib": ["dom", "es2018"],
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": true,
-    "outDir": "./dist/cjs",
+    "outDir": "./dist",
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
