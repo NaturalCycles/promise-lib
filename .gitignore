@@ -34,6 +34,8 @@
 /report
 
 /dist
+/dist-esm
+/dist-cjs
 /tmp
 
 /src/@linked
