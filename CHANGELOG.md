@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/NaturalCycles/promise-lib/compare/v1.0.8...v1.0.9) (2018-11-10)
+
+
+### Bug Fixes
+
+* revert to cjs by default ([ed14693](https://github.com/NaturalCycles/promise-lib/commit/ed14693))
+
 ## [1.0.8](https://github.com/NaturalCycles/promise-lib/compare/v1.0.7...v1.0.8) (2018-11-10)
 
 
