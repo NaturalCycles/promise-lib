@@ -4,7 +4,7 @@
   "scripts": {
     "build-prod": "yarn build-prod-esm & yarn build-prod-cjs",
     "build-prod-esm": "del ./dist && tsc -p tsconfig.prod.json",
-    "build-prod-cjs": "del ./dist-cjs && tsc -p tsconfig.prod.json --outDir ./dist-cjs --module commonjs --declaration false"
+    "build-prod-cjs": "del ./dist-cjs && tsc -p tsconfig.prod.json --outDir ./dist-cjs --module commonjs"
   },
   "devDependencies": {
     "@naturalcycles/common-dev-deps": "^0.0.2",
@@ -20,7 +20,7 @@
     "!src/**/*.test.*",
     "!src/**/__snapshots__"
   ],
-  "main": "dist-cjs/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
