@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/NaturalCycles/promise-lib/compare/v1.0.4...v1.0.5) (2018-11-10)
+
+
+### Bug Fixes
+
+* trying w/o declarations in cjs ([0bebcbf](https://github.com/NaturalCycles/promise-lib/commit/0bebcbf))
+
 ## [1.0.4](https://github.com/NaturalCycles/promise-lib/compare/v1.0.3...v1.0.4) (2018-11-10)
 
 
