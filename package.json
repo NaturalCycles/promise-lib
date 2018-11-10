@@ -4,7 +4,7 @@
   "scripts": {
     "build-prod": "yarn build-prod-esm & yarn build-prod-cjs",
     "build-prod-esm": "del ./dist && tsc -p tsconfig.prod.json",
-    "build-prod-cjs": "del ./dist-cjs && tsc -p tsconfig.prod.json --outDir ./dist-cjs --module commonjs"
+    "build-prod-cjs": "del ./dist-cjs && tsc -p tsconfig.prod.json --outDir ./dist-cjs --module commonjs --declaration false"
   },
   "devDependencies": {
     "@naturalcycles/common-dev-deps": "^0.0.2",
