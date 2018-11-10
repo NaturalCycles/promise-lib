@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/NaturalCycles/promise-lib/compare/v1.0.3...v1.0.4) (2018-11-10)
+
+
+### Bug Fixes
+
+* exporting cjs too ([7f41cda](https://github.com/NaturalCycles/promise-lib/commit/7f41cda))
+
 ## [1.0.3](https://github.com/NaturalCycles/promise-lib/compare/v1.0.2...v1.0.3) (2018-11-09)
 
 
