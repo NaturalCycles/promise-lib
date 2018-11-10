@@ -8,6 +8,9 @@ Improvements:
 - Included Typescript typings (no need for @types/p-props)
  */
 
+/**
+ * Promise.all for Object instead of Array.
+ */
 export async function pProps<T> (input: { [K in keyof T]: T[K] | Promise<T[K]> }): Promise<T> {
   const keys = Object.keys(input)
   const values = await Promise.all(Object.values(input))
