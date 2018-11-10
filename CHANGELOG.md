@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/NaturalCycles/promise-lib/compare/v1.0.6...v1.0.7) (2018-11-10)
+
+
+### Bug Fixes
+
+* comment ([7330b56](https://github.com/NaturalCycles/promise-lib/commit/7330b56))
+
 ## [1.0.6](https://github.com/NaturalCycles/promise-lib/compare/v1.0.5...v1.0.6) (2018-11-10)
 
 
