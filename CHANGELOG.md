@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/NaturalCycles/promise-lib/compare/v1.0.5...v1.0.6) (2018-11-10)
+
+
+### Bug Fixes
+
+* revert to esm ([ebfec27](https://github.com/NaturalCycles/promise-lib/commit/ebfec27))
+
 ## [1.0.5](https://github.com/NaturalCycles/promise-lib/compare/v1.0.4...v1.0.5) (2018-11-10)
 
 
