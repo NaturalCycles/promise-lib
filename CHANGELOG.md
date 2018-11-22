@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/NaturalCycles/promise-lib/compare/v1.0.9...v1.0.10) (2018-11-22)
+
+
+### Bug Fixes
+
+* transpile down to es5 ([1f6f42b](https://github.com/NaturalCycles/promise-lib/commit/1f6f42b))
+
 ## [1.0.9](https://github.com/NaturalCycles/promise-lib/compare/v1.0.8...v1.0.9) (2018-11-10)
 
 
