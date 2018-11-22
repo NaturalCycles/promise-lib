@@ -1,4 +1,4 @@
-export interface Deferred<T> {
+export interface Deferred<T = void> {
   promise: Promise<T>
   resolve (a?: T): void
   reject (e?: any): void
