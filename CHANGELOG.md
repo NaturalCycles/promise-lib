@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/NaturalCycles/promise-lib/compare/v1.0.10...v2.0.0) (2019-01-19)
+
+
+### Features
+
+* publish as es2015 (was: es5) ([9ebbc1e](https://github.com/NaturalCycles/promise-lib/commit/9ebbc1e))
+
+
+### BREAKING CHANGES
+
+* published as es2015 (was: es5)
+
 ## [1.0.10](https://github.com/NaturalCycles/promise-lib/compare/v1.0.9...v1.0.10) (2018-11-22)
 
 
