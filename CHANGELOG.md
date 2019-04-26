@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/NaturalCycles/promise-lib/compare/v2.1.0...v2.1.1) (2019-04-26)
+
+
+### Bug Fixes
+
+* export pState ([ea69291](https://github.com/NaturalCycles/promise-lib/commit/ea69291))
+
 # [2.1.0](https://github.com/NaturalCycles/promise-lib/compare/v2.0.0...v2.1.0) (2019-04-26)
 
 
