@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/NaturalCycles/promise-lib/compare/v2.0.0...v2.1.0) (2019-04-26)
+
+
+### Features
+
+* pState ([904fdcf](https://github.com/NaturalCycles/promise-lib/commit/904fdcf))
+
 # [2.0.0](https://github.com/NaturalCycles/promise-lib/compare/v1.0.10...v2.0.0) (2019-01-19)
 
 
