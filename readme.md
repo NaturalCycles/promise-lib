@@ -1,6 +1,7 @@
 ## @naturalcycles/promise-lib
 
-> Useful promise functions, inspired by [Bluebird](https://github.com/petkaantonov/bluebird), [p-map](https://github.com/sindresorhus/p-map), [p-props](https://github.com/sindresorhus/p-props)
+> Useful promise functions, inspired by [Bluebird](https://github.com/petkaantonov/bluebird),
+> [p-map](https://github.com/sindresorhus/p-map), [p-props](https://github.com/sindresorhus/p-props)
 
 [![npm](https://img.shields.io/npm/v/@naturalcycles/promise-lib/latest.svg)](https://www.npmjs.com/package/@naturalcycles/promise-lib)
 [![](https://circleci.com/gh/NaturalCycles/promise-lib.svg?style=shield&circle-token=cbb20b471eb9c1d5ed975e28c2a79a45671d78ea)](https://circleci.com/gh/NaturalCycles/promise-lib)
@@ -22,13 +23,10 @@
 - Bundled as `es2018`, with native async/await, no transpilation
 - Based (almost copy-pasted) on battle-tested implementations (`p-map`), tests included
 
-# Packaging, support
+# API
 
-CommonJS, es2018.
-
-NodeJS **latest** LTS.
-
-Browser - works for browsers with native async/await support, Babel transpilation to be
-tested...
-
-Follows SemVer. Will start with `0.x` until stabilization in `1.0`.
+- `pMap`
+- `pProps`
+- `pDelay`
+- `pHang`
+- `pState` - returns the current state of the Promise, one of `resolved | rejected | pending`.
