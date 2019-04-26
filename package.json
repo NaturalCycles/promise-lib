@@ -7,9 +7,17 @@
     "build-prod-cjs": "del ./dist && tsc -p tsconfig.prod.json"
   },
   "devDependencies": {
-    "@naturalcycles/common-dev-deps": "^0.0.2",
-    "@naturalcycles/shared-module": "^1.2.0",
-    "jest": "^23.6.0"
+    "@naturalcycles/semantic-release": "^1.0.0",
+    "@naturalcycles/shared-module": "^5.14.5",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.0.0",
+    "jest": "^24.7.1",
+    "jest-junit": "^6.3.0",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
   },
   "files": [
     "dist",

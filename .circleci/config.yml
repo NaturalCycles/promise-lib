@@ -1,76 +1,15 @@
 #
 # validate yml:
-# circleci config validate -c .circleci/config.yml
+# circleci config validate
 #
-
-version: 2
-
-#
-# Defaults
-#
-defaults: &defaults
-  resource_class: xlarge
-  docker:
-    - image: naturalcycles/ci-node:latest
-  working_directory: ~/repo
-
-restore_cache: &restore_cache
-  key: deps-{{ .Environment.CIRCLE_PROJECT_REPONAME }}-v1-{{ checksum "yarn.lock" }}
-
-save_cache: &save_cache
-  paths:
-    - node_modules
-  key: deps-{{ .Environment.CIRCLE_PROJECT_REPONAME }}-v1-{{ checksum "yarn.lock" }}
-
-npm_token: &npm_token echo -e "always-auth=true\n//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-
-git_msg: &git_msg echo 'export GIT_MSG=`git log -1 --pretty=%B`' >> $BASH_ENV
-
-test: &test
-  name: Test
-  command: |
-    cc-test-reporter before-build
-    yarn test-ci
-    cc-test-reporter after-build -t lcov ./coverage/lcov.info
-
-release: &release
-  name: Release (if needed)
-  command: yarn release
+version: 2.1
 
 #
-# Jobs
+# Orbs
 #
-jobs:
-  build-job:
-    <<: *defaults
-    environment:
-      CC_TEST_REPORTER_ID: ced6274e57351811b40360d94abe51b98898045998ede162273bea1f03960faf
-    steps:
-      - checkout
-
-      # yarn
-      - restore_cache: *restore_cache
-      - run: *npm_token
-      - run: yarn --pure-lockfile
-      - save_cache: *save_cache
-
-      # build
-      - run: yarn build-prod
-
-      # test
-      - run: *test
-
-      # release
-      - run: *release
-
-      - store_test_results:
-          path: report
-      - store_artifacts:
-          path: report
-          destination: report
-      - store_artifacts:
-          path: coverage/lcov-report
-          destination: coverage
+orbs:
+  tools: naturalcycles/tools@volatile
+  # tools: naturalcycles/tools@dev:1
 
 #
 # Workflows
@@ -79,4 +18,19 @@ workflows:
   version: 2
   default-workflow:
     jobs:
-      - build-job
+      - tools/publish-job:
+          filters:
+            branches:
+              only: master
+      - tools/test-job:
+          CC_TEST_REPORTER_ID: ced6274e57351811b40360d94abe51b98898045998ede162273bea1f03960faf
+
+  nightly-workflow:
+    triggers:
+      - schedule:
+          cron: '0 4 * * *' # 04:00 every day
+          filters:
+            branches:
+              only: master
+    jobs:
+      - tools/nightly-job
