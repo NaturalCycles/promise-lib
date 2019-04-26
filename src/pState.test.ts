@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { pDefer } from './pDefer'
 import { pDelay } from './pDelay'
 import { pState } from './pState'

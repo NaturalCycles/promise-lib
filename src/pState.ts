@@ -1,5 +1,4 @@
-// Symbols and RegExps are never content-equal
-const UNIQUE_VALUE = window['Symbol'] ? Symbol('unique') : /unique/
+const UNIQUE_VALUE = Symbol('unique')
 
 /**
  * Returns the state of the Promise, one of:
