@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/NaturalCycles/promise-lib/compare/v2.1.1...v2.1.2) (2019-04-26)
+
+
+### Bug Fixes
+
+* pState to always use Symbol ([8f38f1c](https://github.com/NaturalCycles/promise-lib/commit/8f38f1c))
+
 ## [2.1.1](https://github.com/NaturalCycles/promise-lib/compare/v2.1.0...v2.1.1) (2019-04-26)
 
 
