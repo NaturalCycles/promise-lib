@@ -22,7 +22,7 @@ export interface PMapOptions {
  * @param input - Iterated element.
  * @param index - Index of the element in the source array.
  */
-export type PMapMapper<IN = any, OUT = any> = (input: IN, index: number) => OUT | Promise<OUT>
+export type PMapMapper<IN = any, OUT = any> = (input: IN, index: number) => OUT | PromiseLike<OUT>
 
 /**
  * Returns a `Promise` that is fulfilled when all promises in `input` and ones returned from `mapper` are fulfilled,
@@ -51,7 +51,7 @@ export type PMapMapper<IN = any, OUT = any> = (input: IN, index: number) => OUT 
  * })();
  */
 export async function pMap<IN, OUT> (
-  iterable: Iterable<IN>,
+  iterable: Iterable<IN | PromiseLike<IN>>,
   mapper: PMapMapper<IN, OUT>,
   options?: PMapOptions,
 ): Promise<OUT[]> {
