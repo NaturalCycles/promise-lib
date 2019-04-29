@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/NaturalCycles/promise-lib/compare/v2.1.2...v2.2.0) (2019-04-29)
+
+
+### Features
+
+* pFilter ([65226fc](https://github.com/NaturalCycles/promise-lib/commit/65226fc))
+
 ## [2.1.2](https://github.com/NaturalCycles/promise-lib/compare/v2.1.1...v2.1.2) (2019-04-26)
 
 
