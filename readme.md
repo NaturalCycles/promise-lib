@@ -27,6 +27,7 @@
 # API
 
 - `pMap`
+- `pBatch`
 - `pFilter`
 - `pProps`
 - `pDelay`

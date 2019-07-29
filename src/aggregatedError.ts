@@ -3,10 +3,11 @@
  * .message contains concatenated error _messages_ (no stacks).
  * .errors contain raw original errors to be accessed if needed.
  */
-export class AggregatedError extends Error {
+export class AggregatedError<RESULT = any> extends Error {
   errors!: Error[]
+  results!: RESULT[]
 
-  constructor (errors: (Error | string)[]) {
+  constructor (errors: (Error | string)[], results: RESULT[] = []) {
     const mappedErrors = errors.map(e => {
       if (typeof e === 'string') return new Error(e)
       return e
@@ -20,6 +21,7 @@ export class AggregatedError extends Error {
     super(message)
 
     this.errors = mappedErrors
+    this.results = results
 
     this.constructor = AggregatedError
     ;(this as any).__proto__ = AggregatedError.prototype

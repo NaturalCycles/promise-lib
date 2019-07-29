@@ -107,7 +107,7 @@ export async function pMap<IN, OUT> (
 
         if (resolvingCount === 0) {
           if (!stopOnError && errors.length) {
-            reject(new AggregatedError(errors))
+            reject(new AggregatedError(errors, ret))
           } else {
             resolve(ret)
           }
