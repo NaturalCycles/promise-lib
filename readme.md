@@ -31,3 +31,4 @@
 - `pDelay`
 - `pHang`
 - `pState` - returns the current state of the Promise, one of `resolved | rejected | pending`.
+- `pDefer`

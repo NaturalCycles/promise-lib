@@ -1,10 +1,28 @@
+import { AggregatedError } from './aggregatedError'
 import { pDelay } from './pDelay'
 import { pMap, PMapMapper } from './pMap'
 import { inRange, randomInt, timeSpan } from './test/test.util'
 
 const input = [Promise.resolve([10, 300]), [20, 200], [30, 100]]
 
-const mapper: PMapMapper = ([val, ms]) => pDelay(ms).then(() => val)
+const errorInput1 = [
+  [20, 200],
+  [30, 100],
+  [() => Promise.reject(new Error('foo'))],
+  [() => Promise.reject(new Error('bar'))],
+]
+
+const errorInput2 = [
+  [20, 200],
+  [() => Promise.reject(new Error('bar'))],
+  [30, 100],
+  [() => Promise.reject(new Error('foo'))],
+]
+
+const mapper: PMapMapper = ([val, ms]) => {
+  if (typeof val === 'function') return val()
+  return pDelay(ms, val)
+}
 
 test('main', async () => {
   const end = timeSpan()
@@ -74,4 +92,21 @@ test('reject', async () => {
     return v
   }
   await expect(pMap(input, mapper, { concurrency: 1 })).rejects.toThrow('Err')
+})
+
+test('immediately rejects when stopOnError is true', async () => {
+  await expect(pMap(errorInput1, mapper, { concurrency: 1 })).rejects.toThrow('foo')
+  await expect(pMap(errorInput2, mapper, { concurrency: 1 })).rejects.toThrow('bar')
+})
+
+test('aggregate errors when stopOnError is false', async () => {
+  // should not throw
+  await pMap(input, mapper, { concurrency: 1, stopOnError: false })
+
+  await expect(pMap(errorInput1, mapper, { concurrency: 1, stopOnError: false })).rejects.toThrow(
+    new AggregatedError(['foo', 'bar']),
+  )
+  await expect(pMap(errorInput2, mapper, { concurrency: 1, stopOnError: false })).rejects.toThrow(
+    new AggregatedError(['bar', 'foo']),
+  )
 })

@@ -7,6 +7,8 @@ Improvements:
 - Compatible with pProps (that had typings issues)
  */
 
+import { AggregatedError } from './aggregatedError'
+
 export interface PMapOptions {
   /**
    * Number of concurrently pending promises returned by `mapper`.
@@ -14,6 +16,13 @@ export interface PMapOptions {
    * @default Infinity
    */
   concurrency?: number
+
+  /**
+   * When set to `false`, instead of stopping when a promise rejects, it will wait for all the promises to settle and then reject with an Aggregated error.
+   *
+   * @default true
+   */
+  stopOnError?: boolean
 }
 
 /**
@@ -59,6 +68,7 @@ export async function pMap<IN, OUT> (
     options = Object.assign(
       {
         concurrency: Infinity,
+        stopOnError: true,
       },
       options,
     )
@@ -67,7 +77,7 @@ export async function pMap<IN, OUT> (
       throw new TypeError('Mapper function is required')
     }
 
-    const { concurrency } = options
+    const { concurrency, stopOnError } = options
 
     if (!(typeof concurrency === 'number' && concurrency >= 1)) {
       throw new TypeError(
@@ -77,6 +87,7 @@ export async function pMap<IN, OUT> (
 
     const ret: OUT[] = []
     const iterator = iterable[Symbol.iterator]()
+    const errors: Error[] = []
     let isRejected = false
     let isIterableDone = false
     let resolvingCount = 0
@@ -95,7 +106,11 @@ export async function pMap<IN, OUT> (
         isIterableDone = true
 
         if (resolvingCount === 0) {
-          resolve(ret)
+          if (!stopOnError && errors.length) {
+            reject(new AggregatedError(errors))
+          } else {
+            resolve(ret)
+          }
         }
 
         return
@@ -112,8 +127,14 @@ export async function pMap<IN, OUT> (
             next()
           },
           error => {
-            isRejected = true
-            reject(error)
+            if (stopOnError) {
+              isRejected = true
+              reject(error)
+            } else {
+              errors.push(error)
+              resolvingCount--
+              next()
+            }
           },
         )
     }

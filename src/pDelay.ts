@@ -1,3 +1,3 @@
-export async function pDelay (ms: number): Promise<void> {
-  return new Promise<void>(r => setTimeout(r, ms))
+export async function pDelay<T> (ms: number = 0, value?: T): Promise<T> {
+  return new Promise<T>(resolve => setTimeout(() => resolve(value), ms))
 }

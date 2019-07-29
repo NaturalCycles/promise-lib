@@ -16,7 +16,6 @@
     "dist",
     "dist-esm",
     "src",
-    "!src/scripts",
     "!src/test",
     "!src/**/*.test.*",
     "!src/**/__snapshots__"
