@@ -1,3 +1,5 @@
+# Deprecated! Use [js-lib](https://github.com/NaturalCycles/js-lib) instead
+
 ## @naturalcycles/promise-lib
 
 > Useful promise functions, inspired by [Bluebird](https://github.com/petkaantonov/bluebird),
